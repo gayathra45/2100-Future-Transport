@@ -1,0 +1,222 @@
+/* ==========================================================================
+   ORBIT 2100 — Accessibility & Adaptive Journey Themes
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Large Text Scale Mode
+   -------------------------------------------------------------------------- */
+[data-large-text="true"] {
+  --font-size-xs: 0.9375rem; /* 15px */
+  --font-size-sm: 1.0625rem; /* 17px */
+  --font-size-base: 1.1875rem; /* 19px */
+  --font-size-md: 1.3125rem; /* 21px */
+  --font-size-lg: 1.625rem; /* 26px */
+  --font-size-xl: 2.125rem; /* 34px */
+  --font-size-2xl: 2.625rem; /* 42px */
+  --font-size-hero: 3.5rem; /* 56px */
+}
+
+/* --------------------------------------------------------------------------
+   2. High Contrast Mode
+   -------------------------------------------------------------------------- */
+[data-high-contrast="true"] {
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #E5E7EB;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-hover: #F3F4F6;
+  --color-text-primary: #000000;
+  --color-text-secondary: #1F2937;
+  --color-text-muted: #374151;
+  --border-subtle: #000000;
+  --border-strong: #000000;
+  --border-glass: #000000;
+  --color-dark-primary: #000000;
+  --color-accent-cyan: #004D80;
+  --color-accent-mint: #006633;
+}
+
+[data-theme="dark"][data-high-contrast="true"] {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #111827;
+  --color-surface: #000000;
+  --color-surface-elevated: #111827;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #F3F4F6;
+  --color-text-muted: #E5E7EB;
+  --border-subtle: #FFFFFF;
+  --border-strong: #FFFFFF;
+  --border-glass: #FFFFFF;
+  --color-accent-cyan: #66E0FF;
+  --color-accent-mint: #80FFCC;
+}
+
+[data-high-contrast="true"] .card-orbit,
+[data-high-contrast="true"] .card-glass,
+[data-high-contrast="true"] .btn,
+[data-high-contrast="true"] input {
+  border-width: 2px !important;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Low Sensory Mode (Calm, Reduced Stimuli)
+   -------------------------------------------------------------------------- */
+[data-low-sensory="true"] {
+  --shadow-glow-cyan: none !important;
+  --shadow-glow-mint: none !important;
+}
+
+[data-low-sensory="true"] * {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+
+[data-low-sensory="true"] .hero-glow-aura,
+[data-low-sensory="true"] .pass-hologram-shimmer {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Step-Free Adaptive Journey Highlighting
+   -------------------------------------------------------------------------- */
+[data-step-free="true"] .step-free-badge {
+  display: inline-flex !important;
+  background: rgba(16, 185, 129, 0.2);
+  color: #047857;
+  border: 1px solid #10B981;
+  font-weight: var(--font-weight-bold);
+}
+
+[data-theme="dark"][data-step-free="true"] .step-free-badge {
+  color: #6EE7B7;
+}
+
+/* --------------------------------------------------------------------------
+   5. Voice Guidance Simulation Bar
+   -------------------------------------------------------------------------- */
+.voice-guidance-bar {
+  display: none;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-dark-primary);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--color-accent-cyan);
+  box-shadow: var(--shadow-md);
+  animation: bar-fade 250ms ease;
+}
+
+.voice-guidance-bar.show {
+  display: flex;
+}
+
+@keyframes bar-fade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.voice-soundwave-indicator {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 18px;
+}
+
+.soundwave-bar {
+  width: 3px;
+  height: 100%;
+  background-color: var(--color-accent-cyan);
+  border-radius: var(--radius-pill);
+  animation: soundwave 1s ease-in-out infinite alternate;
+}
+
+.soundwave-bar:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+.soundwave-bar:nth-child(3) { animation-delay: 0.4s; height: 85%; }
+.soundwave-bar:nth-child(4) { animation-delay: 0.1s; height: 40%; }
+
+@keyframes soundwave {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+/* --------------------------------------------------------------------------
+   6. Simple View Mode (Inclusive Extreme-Simple UI)
+   -------------------------------------------------------------------------- */
+.simple-mode-view {
+  display: none;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: var(--space-4) 0 var(--space-12) 0;
+}
+
+.simple-mode-view.active {
+  display: block;
+}
+
+.simple-hero-card {
+  background: var(--color-surface);
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .simple-hero-card {
+    padding: var(--space-8);
+  }
+}
+
+.simple-step-card {
+  background: var(--color-surface);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.simple-step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-dark-primary);
+  color: #FFFFFF;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .simple-step-num {
+  background: var(--color-accent-cyan);
+  color: var(--color-dark-primary);
+}
+
+.simple-quick-dest-btn {
+  width: 100%;
+  padding: var(--space-4);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-strong);
+  background: var(--color-surface);
+  margin-bottom: var(--space-3);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.simple-quick-dest-btn:hover {
+  border-color: var(--color-accent-cyan);
+  background: var(--color-bg-secondary);
+}

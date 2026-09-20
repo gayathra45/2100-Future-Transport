@@ -1,0 +1,162 @@
+/* ==========================================================================
+   ORBIT 2100 — Design System Tokens & CSS Variables
+   Cre8x 3.0: The Oracle Challenge
+   ========================================================================== */
+
+:root {
+  /* Color Palette — Light Mode (Default) */
+  --color-bg-primary: #F5F7F8;
+  --color-bg-secondary: #EDF1F3;
+  --color-bg-tertiary: #E2E8EB;
+  --color-surface: #FFFFFF;
+  --color-surface-translucent: rgba(255, 255, 255, 0.82);
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-hover: #F0F4F6;
+  
+  /* Deep & Dark Accents */
+  --color-dark-primary: #07151C;
+  --color-dark-secondary: #0D2630;
+  --color-dark-tertiary: #163845;
+  --color-dark-surface: #0E222B;
+  
+  /* Futuristic Accents (Used Sparingly & Intentionally) */
+  --color-accent-cyan: #38D9FF;
+  --color-accent-cyan-rgb: 56, 217, 255;
+  --color-accent-mint: #7EF2C5;
+  --color-accent-mint-rgb: 126, 242, 197;
+  --color-accent-soft-blue: #A9E8FF;
+  
+  /* Text & Typography Colors */
+  --color-text-primary: #10232B;
+  --color-text-secondary: #61727A;
+  --color-text-muted: #8E9EA6;
+  --color-text-inverse: #FFFFFF;
+  --color-text-inverse-secondary: #A0B4BD;
+  
+  /* Status & Alerts */
+  --color-warning: #FFB84D;
+  --color-error: #FF6B6B;
+  --color-success: #10B981;
+  --color-info: #38D9FF;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(16, 35, 43, 0.08);
+  --border-strong: rgba(16, 35, 43, 0.16);
+  --border-glass: rgba(255, 255, 255, 0.5);
+  --border-glass-dark: rgba(255, 255, 255, 0.12);
+
+  /* Typography System */
+  --font-family-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', Consolas, Monaco, monospace;
+  
+  /* Font Sizes with Fluid Clamp */
+  --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem); /* 12px - 13px */
+  --font-size-sm: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem); /* 13px - 14px */
+  --font-size-base: clamp(0.9375rem, 0.9rem + 0.25vw, 1rem); /* 15px - 16px */
+  --font-size-md: clamp(1.0625rem, 1rem + 0.3vw, 1.125rem); /* 17px - 18px */
+  --font-size-lg: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem); /* 20px - 24px */
+  --font-size-xl: clamp(1.625rem, 1.4rem + 1vw, 2rem); /* 26px - 32px */
+  --font-size-2xl: clamp(2.125rem, 1.8rem + 1.8vw, 3rem); /* 34px - 48px */
+  --font-size-hero: clamp(2.5rem, 2rem + 3.2vw, 4.5rem); /* 40px - 72px */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.15;
+  --line-height-snug: 1.3;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+
+  /* Spacing System (8px Grid Foundation) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* Border Radii (18px - 36px Soft Apple/Spatial Curves) */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-2xl: 34px;
+  --radius-3xl: 42px;
+  --radius-pill: 9999px;
+
+  /* Shadows (Subtle, Multi-layered, Diffused) */
+  --shadow-sm: 0 2px 8px rgba(7, 21, 28, 0.04), 0 1px 2px rgba(7, 21, 28, 0.02);
+  --shadow-md: 0 8px 24px rgba(7, 21, 28, 0.06), 0 2px 6px rgba(7, 21, 28, 0.03);
+  --shadow-lg: 0 16px 40px rgba(7, 21, 28, 0.08), 0 4px 12px rgba(7, 21, 28, 0.04);
+  --shadow-xl: 0 24px 60px rgba(7, 21, 28, 0.12), 0 6px 18px rgba(7, 21, 28, 0.05);
+  --shadow-glow-cyan: 0 0 30px rgba(56, 217, 255, 0.25);
+  --shadow-glow-mint: 0 0 30px rgba(126, 242, 197, 0.25);
+
+  /* Glassmorphism & Blurs */
+  --backdrop-blur: blur(20px);
+  --backdrop-blur-sm: blur(12px);
+
+  /* Transitions & Animation Easing */
+  --transition-fast: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-spring: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout Constrains */
+  --max-width-content: 1320px;
+  --max-width-narrow: 840px;
+  --header-height-mobile: 60px;
+  --header-height-desktop: 74px;
+  --bottom-nav-height: 68px;
+  --touch-target-min: 44px;
+
+  /* Z-Index Layers */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-bottom-nav: 250;
+  --z-drawer: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-toast: 600;
+  --z-assistant: 700;
+}
+
+/* ==========================================================================
+   Dark Mode Token Overrides
+   ========================================================================== */
+[data-theme="dark"] {
+  --color-bg-primary: #07151C;
+  --color-bg-secondary: #0D2630;
+  --color-bg-tertiary: #143542;
+  --color-surface: #0D2630;
+  --color-surface-translucent: rgba(13, 38, 48, 0.85);
+  --color-surface-elevated: #133340;
+  --color-surface-hover: #194050;
+
+  --color-text-primary: #F5F7F8;
+  --color-text-secondary: #97AAB3;
+  --color-text-muted: #647B85;
+  --color-text-inverse: #07151C;
+  --color-text-inverse-secondary: #2C4A57;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-glass-dark: rgba(255, 255, 255, 0.08);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.55);
+}

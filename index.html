@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>ORBIT 2100 — Transportation Operating System</title>
+  <meta name="description" content="Futuristic Uber-style multimodal transportation operating system for 2100. Synchronizing autonomous rail, air mobility, and smart roads into one journey.">
+  <meta name="theme-color" content="#07151C">
+  
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+  <!-- Ambient Grid Background -->
+  <div class="ambient-grid-bg" aria-hidden="true"></div>
+
+  <!-- Voice Guidance Captions Bar -->
+  <div id="voice-guidance-banner" class="voice-guidance-bar app-container" role="status" aria-live="polite">
+    <div class="voice-soundwave-indicator" aria-hidden="true">
+      <div class="soundwave-bar"></div>
+      <div class="soundwave-bar"></div>
+      <div class="soundwave-bar"></div>
+      <div class="soundwave-bar"></div>
+    </div>
+    <div style="font-size: var(--font-size-sm); flex: 1;">
+      <strong>ORBIT Audio Escort:</strong> <span id="voice-guidance-text">Guidance active.</span>
+    </div>
+  </div>
+
+  <!-- Clean Minimalist Header (Max 3 links) -->
+  <header class="app-header">
+    <div class="app-container header-inner">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo-wrap" data-nav-target="home" aria-label="ORBIT 2100 Home">
+        <svg class="brand-orbit-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2.5" opacity="0.25"/>
+          <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#38D9FF" stroke-width="2" transform="rotate(-25 16 16)"/>
+          <circle cx="26" cy="11" r="3" fill="#7EF2C5"/>
+          <circle cx="16" cy="16" r="5" fill="currentColor"/>
+        </svg>
+        <span class="brand-logo-text">
+          ORBIT <span class="brand-year">2100</span>
+        </span>
+      </a>
+
+      <!-- 3-Tab Desktop Navigation -->
+      <nav class="desktop-nav-links" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active" data-nav-target="home">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/></svg>
+          <span>Ride & Plan</span>
+        </a>
+        <a href="#live" class="nav-link" data-nav-target="live">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/></svg>
+          <span>Live Tracking</span>
+        </a>
+        <a href="#map" class="nav-link" data-nav-target="map">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+          <span>Mobility Map</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button class="btn btn-secondary btn-icon" data-toggle-theme title="Toggle theme" aria-label="Toggle theme">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <!-- Accessibility Preferences -->
+        <button class="btn btn-secondary btn-icon" data-open-a11y-modal title="Accessibility Settings" aria-label="Accessibility settings">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="m4.93 10.93 4.24-4.24a4 4 0 0 1 5.66 0l4.24 4.24M12 11v11M8 16l4 2 4-2"/></svg>
+        </button>
+
+        <!-- Pass / Profile -->
+        <button class="btn btn-secondary btn-icon" data-open-profile title="Quantum Pass" aria-label="Digital travel pass">
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    
+    <!-- ====================================================================
+         VIEW 1: RIDE & PLAN (UBER-STYLE FUTURISTIC BOOKING)
+         ==================================================================== -->
+    <section class="view-section active" data-view-id="home" id="section-home">
+      <div class="app-container hero-ride-container">
+               <!-- ====================================================================
+             FUTURISTIC CINEMATIC HERO BANNER
+             ==================================================================== -->
+        <div class="hero-panoramic-banner">
+          <img src="assets/images/hero_city_2100.jpg" alt="Futuristic Sri Lanka 2100 Multi-Modal Transit Grid" class="hero-banner-bg-img">
+          <div class="hero-banner-gradient-overlay"></div>
+
+          <div class="hero-banner-content">
+            <!-- Top Tag Badge -->
+            <div class="hero-badge-tag">
+              <svg class="icon icon-xs" style="color: var(--color-accent-cyan);" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>SRI LANKA 2100 • QUANTUM MULTI-MODAL SWARM DISPATCH</span>
+            </div>
+
+            <!-- Big Headline -->
+            <h1 class="hero-main-title">
+              One Journey. Every Way Forward.
+            </h1>
+
+            <!-- Subtitle Description -->
+            <p class="hero-main-description">
+              Experience Sri Lanka's synchronized transportation grid. Continuous transit across airpod skyways, maglev rails, and autonomous smart roads with zero waiting.
+            </p>
+
+            <!-- 3 CTA Action Buttons -->
+            <div class="hero-actions-row">
+              <button type="button" class="btn btn-hero-primary" id="open-booking-modal-btn">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+                <span>Plan 3–Step Journey</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <button type="button" class="btn btn-hero-glass" data-nav-target="live">
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+                <span>Live Swarm Tracker</span>
+              </button>
+              <button type="button" class="btn btn-hero-glass" data-nav-target="map">
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+                <span>Mobility Map</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             FLOATING QUICK-DISPATCH HORIZONTAL CONSOLE CARD
+             ==================================================================== -->
+        <div class="hero-floating-dispatch-card">
+          <!-- Card Header Row -->
+          <div class="dispatch-card-header">
+            <div class="dispatch-card-header-left">
+              <span class="dispatch-pill-tag">
+                <svg class="icon icon-xs" style="color: var(--color-accent-cyan);" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>2100 QUANTUM ROUTE DISPATCH</span>
+              </span>
+              <span class="dispatch-header-subtext">
+                Select pickup & destination to launch instant autonomous sync
+              </span>
+            </div>
+            <div class="dispatch-card-header-right">
+              <span class="dispatch-grid-status">
+                <span class="live-dot-pulse"></span>
+                <span>Mesh Grid: Operational (0.38ms)</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Popular End Points Presets -->
+          <div class="dispatch-presets-container">
+            <span class="dispatch-presets-label">POPULAR END POINTS:</span>
+            <div class="dispatch-presets-list">
+              <button type="button" class="dispatch-preset-btn active" data-quick-dest="Oceanic District Floating Plaza">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+                <span>Oceanic District</span>
+                <span class="preset-time-badge">11 min</span>
+              </button>
+              <button type="button" class="dispatch-preset-btn" data-quick-dest="University Eco-Arcology">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>University Arcology</span>
+                <span class="preset-time-badge">16 min</span>
+              </button>
+              <button type="button" class="dispatch-preset-btn" data-quick-dest="Sky Gardens Bio-Tower">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M12 10a4 4 0 0 0-4 4c0 2 2 3 4 3s4-1 4-3a4 4 0 0 0-4-4zM12 2a6 6 0 0 0-6 6c0 3 2.5 5.5 6 5.5s6-2.5 6-5.5a6 6 0 0 0-6-6zM12 17v5"/></svg>
+                <span>Sky Gardens</span>
+                <span class="preset-time-badge">14 min</span>
+              </button>
+              <button type="button" class="dispatch-preset-btn" data-quick-dest="Lunar Gateway Orbital Terminal">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6.05 11a22.35 22.35 0 0 1-3.95 2z"/></svg>
+                <span>Lunar Gateway</span>
+                <span class="preset-time-badge">24 min</span>
+              </button>
+              <button type="button" class="dispatch-preset-btn" data-quick-dest="Kandy SkyHub">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                <span>Kandy SkyHub</span>
+                <span class="preset-time-badge">19 min</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Horizontal Route Inputs & Dispatch Button -->
+          <form id="journey-planner-form" onsubmit="return false;" class="dispatch-horizontal-form">
+            <!-- Start Point (Pickup Node) -->
+            <div class="dispatch-input-block">
+              <div class="dispatch-input-label">
+                <span class="dot-indicator green-dot"></span>
+                <span>START POINT (PICKUP NODE)</span>
+              </div>
+              <div class="dispatch-field-wrapper">
+                <span class="dispatch-field-icon">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+                </span>
+                <input type="text" id="planner-from-input" class="dispatch-field-input" value="Colombo Central Grand Hub" autocomplete="off" placeholder="Enter pickup hub" required>
+                <div id="from-autocomplete" class="autocomplete-dropdown"></div>
+              </div>
+            </div>
+
+            <!-- Swap Button -->
+            <button type="button" class="dispatch-swap-circle-btn" id="planner-swap-btn" title="Swap locations" aria-label="Swap pickup and destination">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg>
+            </button>
+
+            <!-- End Point (Destination Hub) -->
+            <div class="dispatch-input-block">
+              <div class="dispatch-input-label">
+                <span class="dot-indicator cyan-dot"></span>
+                <span>END POINT (DESTINATION HUB)</span>
+              </div>
+              <div class="dispatch-field-wrapper">
+                <span class="dispatch-field-icon">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <input type="text" id="planner-to-input" class="dispatch-field-input" value="Oceanic District Floating Plaza" autocomplete="off" placeholder="Where to in 2100?" required>
+                <div id="to-autocomplete" class="autocomplete-dropdown"></div>
+              </div>
+            </div>
+
+            <!-- Start Journey CTA Button -->
+            <button type="button" class="btn btn-dispatch-submit" id="hero-start-journey-btn">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Start 2100 Journey</span>
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- 1. Live 2100 Telemetry & Network Health Counters -->
+        <section class="telemetry-ticker-section">
+          <div class="telemetry-ticker-grid">
+            <div class="telemetry-metric-card">
+              <span class="badge badge-live">● REAL-TIME</span>
+              <div class="telemetry-metric-val" id="metric-active-vehicles">14,892</div>
+              <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: 700;">Active Synchronized Vehicles</div>
+              <div style="font-size: 11px; color: var(--color-text-muted); margin-top: 2px;">Platoon headway: 0.8s</div>
+            </div>
+
+            <div class="telemetry-metric-card">
+              <span class="badge badge-fastest">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>QUANTUM MESH</span>
+              </span>
+              <div class="telemetry-metric-val" style="color: var(--color-accent-cyan);">0.38 ms</div>
+              <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: 700;">Island Grid Latency</div>
+              <div style="font-size: 11px; color: var(--color-text-muted); margin-top: 2px;">Sub-second auto-routing</div>
+            </div>
+
+            <div class="telemetry-metric-card">
+              <span class="badge badge-eco">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+                <span>ZERO CARBON</span>
+              </span>
+              <div class="telemetry-metric-val" style="color: #10B981;">0g Net</div>
+              <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: 700;">Kinetic & Solar Energy</div>
+              <div style="font-size: 11px; color: var(--color-text-muted); margin-top: 2px;">100% Photovoltaic grid</div>
+            </div>
+
+            <div class="telemetry-metric-card">
+              <span class="badge badge-balanced">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>SAFETY ESCORT</span>
+              </span>
+              <div class="telemetry-metric-val">75 sec</div>
+              <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); font-weight: 700;">Emergency Pod Dispatch</div>
+              <div style="font-size: 11px; color: var(--color-text-muted); margin-top: 2px;">Island-wide rapid coverage</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 1B. Live 2100 Corridor Status & Swarm Radar Grid -->
+        <section class="corridor-status-section">
+          <div class="section-header-center">
+            <span class="badge badge-live">● REAL-TIME NETWORK MONITOR</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">Island-Wide Transit Corridors</h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+              Continuous telemetry from Sri Lanka's four primary autonomous transit arteries.
+            </p>
+          </div>
+
+          <div class="corridor-status-grid">
+            <!-- Corridor 1: Coastal Maglev -->
+            <div class="corridor-status-card" data-nav-target="map" style="cursor: pointer;">
+              <div class="corridor-status-header">
+                <span class="badge badge-balanced" style="font-size: 10px;">MAGLEV SPINE</span>
+                <span class="live-pulse-dot" title="Operational"></span>
+              </div>
+              <div>
+                <div class="corridor-title">Sector 01: Coastal Maglev (650 km/h)</div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 4px;">Colombo Central ⇄ Galle Marine Gateway</p>
+              </div>
+              <div class="corridor-metric-row">
+                <span style="display: flex; align-items: center; gap: 4px;"><svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Headway: <strong>45 sec</strong></span>
+                <span style="color: #10B981; font-weight: 700;">● 100% On-Time</span>
+              </div>
+            </div>
+
+            <!-- Corridor 2: Central Skyway -->
+            <div class="corridor-status-card" data-nav-target="map" style="cursor: pointer;">
+              <div class="corridor-status-header">
+                <span class="badge badge-fastest" style="font-size: 10px;">SKYWAY AEROWAY</span>
+                <span class="live-pulse-dot" title="Operational"></span>
+              </div>
+              <div>
+                <div class="corridor-title">Sector 02: Central Skyway (450 km/h)</div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 4px;">Colombo Central ⇄ Kandy Cloud Terminal</p>
+              </div>
+              <div class="corridor-metric-row">
+                <span style="display: flex; align-items: center; gap: 4px;"><svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg> AirPod Platoon: <strong>Active</strong></span>
+                <span style="color: var(--color-accent-cyan); font-weight: 700;">● 0.02g Turb.</span>
+              </div>
+            </div>
+
+            <!-- Corridor 3: Northern Hyperloop -->
+            <div class="corridor-status-card" data-nav-target="map" style="cursor: pointer;">
+              <div class="corridor-status-header">
+                <span class="badge badge-eco" style="font-size: 10px;">HYPERLOOP TUBE</span>
+                <span class="live-pulse-dot" title="Operational"></span>
+              </div>
+              <div>
+                <div class="corridor-title">Sector 03: Northern Express (900 km/h)</div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 4px;">Jaffna Solar Hub ⇄ Anuradhapura ⇄ Colombo</p>
+              </div>
+              <div class="corridor-metric-row">
+                <span style="display: flex; align-items: center; gap: 4px;"><svg class="icon icon-xs" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16M12 3v8M8 19l-3 3M16 19l3 3M9 15h.01M15 15h.01"/></svg> Vacuum: <strong>0.001 Bar</strong></span>
+                <span style="color: #10B981; font-weight: 700;">● 18m Express</span>
+              </div>
+            </div>
+
+            <!-- Corridor 4: Smart Road Platoon -->
+            <div class="corridor-status-card" data-nav-target="map" style="cursor: pointer;">
+              <div class="corridor-status-header">
+                <span class="badge badge-balanced" style="font-size: 10px;">SMART ROADS</span>
+                <span class="live-pulse-dot" title="Operational"></span>
+              </div>
+              <div>
+                <div class="corridor-title">Sector 04: Urban Micro-Grid (180 km/h)</div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 4px;">Dynamic Shuttles & Bio-Pavement Pods</p>
+              </div>
+              <div class="corridor-metric-row">
+                <span style="display: flex; align-items: center; gap: 4px;"><svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Induction: <strong>100% Solar</strong></span>
+                <span style="color: #10B981; font-weight: 700;">● 0 Delay</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Interactive 2100 Fleet Showcase -->
+        <section class="fleet-section">
+          <div class="section-header-center">
+            <span class="badge badge-balanced">THE 2100 MOBILITY FLEET</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">Next-Generation Vehicles</h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+              Engineered with aerodynamic carbon composites, whisper-quiet acoustic shielding, and Level 5 multi-agent swarm intelligence.
+            </p>
+          </div>
+
+          <div class="fleet-cards-grid">
+            <!-- Fleet Card 1 -->
+            <div class="image-showcase-card" data-fleet-book="airpod">
+              <img src="assets/images/airpod_taxi.jpg" alt="ORBIT AirPod eVTOL" class="image-showcase-bg">
+              <div class="image-showcase-overlay"></div>
+              <div class="image-showcase-content">
+                <span class="badge badge-fastest" style="margin-bottom: 6px;">Sky Corridor • 450 km/h</span>
+                <h3 style="font-size: var(--font-size-lg); color: #FFFFFF;">ORBIT AirPod eVTOL</h3>
+                <p style="font-size: var(--font-size-xs); color: #D1DEE5; margin-bottom: var(--space-3);">Direct point-to-point urban sky travel with panoramic glass canopies.</p>
+                <button class="btn btn-glass" style="width: 100%; padding: 8px; font-size: 12px; color: #FFFFFF; font-weight: 700;">
+                  <span>Book AirPod Ride</span>
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fleet Card 2 -->
+            <div class="image-showcase-card" data-fleet-book="skyrail">
+              <img src="assets/images/autonomous_rail.jpg" alt="SkyRail Maglev" class="image-showcase-bg">
+              <div class="image-showcase-overlay"></div>
+              <div class="image-showcase-content">
+                <span class="badge badge-balanced" style="margin-bottom: 6px;">High-Speed Spine • 650 km/h</span>
+                <h3 style="font-size: var(--font-size-lg); color: #FFFFFF;">SkyRail High-Spine</h3>
+                <p style="font-size: var(--font-size-xs); color: #D1DEE5; margin-bottom: var(--space-3);">Frictionless magnetic levitation connecting coastal and mountain hubs.</p>
+                <button class="btn btn-glass" style="width: 100%; padding: 8px; font-size: 12px; color: #FFFFFF; font-weight: 700;">
+                  <span>Book SkyRail Ride</span>
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fleet Card 3 -->
+            <div class="image-showcase-card" data-fleet-book="autopod">
+              <img src="assets/images/autonomous_bus.jpg" alt="Autonomous Smart Shuttle" class="image-showcase-bg">
+              <div class="image-showcase-overlay"></div>
+              <div class="image-showcase-content">
+                <span class="badge badge-eco" style="margin-bottom: 6px;">Dynamic Platoon • Smart Road</span>
+                <h3 style="font-size: var(--font-size-lg); color: #FFFFFF;">Autonomous Smart Shuttle</h3>
+                <p style="font-size: var(--font-size-xs); color: #D1DEE5; margin-bottom: var(--space-3);">Zero-emission inductive road charging with pneumatic level-boarding ramps.</p>
+                <button class="btn btn-glass" style="width: 100%; padding: 8px; font-size: 12px; color: #FFFFFF; font-weight: 700;">
+                  <span>Book Shuttle Ride</span>
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Fleet Card 4 -->
+            <div class="image-showcase-card" data-fleet-book="airpod">
+              <img src="assets/images/hero_city_2100.jpg" alt="Multi-Modal Swarm Nexus" class="image-showcase-bg">
+              <div class="image-showcase-overlay"></div>
+              <div class="image-showcase-content">
+                <span class="badge badge-balanced" style="margin-bottom: 6px;">Universal Mesh • 0g CO₂</span>
+                <h3 style="font-size: var(--font-size-lg); color: #FFFFFF;">Quantum Swarm Nexus</h3>
+                <p style="font-size: var(--font-size-xs); color: #D1DEE5; margin-bottom: var(--space-3);">Synchronized multi-vehicle transfers with zero waiting time at platforms.</p>
+                <button class="btn btn-glass" style="width: 100%; padding: 8px; font-size: 12px; color: #FFFFFF; font-weight: 700;">
+                  <span>Explore Network</span>
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2C. Interactive 2100 Travel & Carbon Offset Calculator -->
+        <section class="fare-calc-section">
+          <div class="fare-calc-card">
+            <div class="section-header-center" style="margin-bottom: var(--space-4);">
+              <span class="badge badge-eco">
+                <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+                <span>QUANTUM DISPATCH CALCULATOR</span>
+              </span>
+              <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">2100 Travel Time & Carbon Offset Estimator</h2>
+              <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+                Simulate instantaneous autonomous routing across Sri Lanka and compare against historical 2026 travel metrics.
+              </p>
+            </div>
+
+            <div class="fare-calc-grid">
+              <!-- Left Inputs -->
+              <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+                <div>
+                  <label style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 6px; display: block;">
+                    Origin Transit Hub
+                  </label>
+                  <select id="calc-origin-select" class="route-field-input" style="width: 100%; cursor: pointer;">
+                    <option value="Colombo Central Grand Hub" data-coords="6.9271,79.8612" selected>Colombo Central Grand Hub (Western Node)</option>
+                    <option value="Oceanic District Floating Plaza" data-coords="6.9400,79.8400">Oceanic District Floating Plaza (Offshore)</option>
+                    <option value="Kandy SkyHub" data-coords="7.2906,80.6337">Kandy SkyHub (Central Highlands)</option>
+                    <option value="Galle Fort Marine Gateway" data-coords="6.0535,80.2210">Galle Fort Marine Gateway (Southern Node)</option>
+                    <option value="Jaffna Solar Hub" data-coords="9.6615,80.0255">Jaffna Solar Hub (Northern Terminal)</option>
+                    <option value="Trincomalee Deep-Sea Aeroway" data-coords="8.5874,81.2152">Trincomalee Deep-Sea Aeroway (Eastern Node)</option>
+                    <option value="Anuradhapura Heritage Nexus" data-coords="8.3114,80.4037">Anuradhapura Heritage Nexus (North Central)</option>
+                    <option value="Batticaloa Lagoon Aerodome" data-coords="7.7102,81.6924">Batticaloa Lagoon Aerodome (East Coastal)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 6px; display: block;">
+                    Destination Terminal
+                  </label>
+                  <select id="calc-dest-select" class="route-field-input" style="width: 100%; cursor: pointer;">
+                    <option value="Oceanic District Floating Plaza" data-coords="6.9400,79.8400">Oceanic District Floating Plaza (Offshore)</option>
+                    <option value="Colombo Central Grand Hub" data-coords="6.9271,79.8612">Colombo Central Grand Hub (Western Node)</option>
+                    <option value="Kandy SkyHub" data-coords="7.2906,80.6337" selected>Kandy SkyHub (Central Highlands)</option>
+                    <option value="Galle Fort Marine Gateway" data-coords="6.0535,80.2210">Galle Fort Marine Gateway (Southern Node)</option>
+                    <option value="Jaffna Solar Hub" data-coords="9.6615,80.0255">Jaffna Solar Hub (Northern Terminal)</option>
+                    <option value="Trincomalee Deep-Sea Aeroway" data-coords="8.5874,81.2152">Trincomalee Deep-Sea Aeroway (Eastern Node)</option>
+                    <option value="Anuradhapura Heritage Nexus" data-coords="8.3114,80.4037">Anuradhapura Heritage Nexus (North Central)</option>
+                    <option value="Batticaloa Lagoon Aerodome" data-coords="7.7102,81.6924">Batticaloa Lagoon Aerodome (East Coastal)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 6px; display: block;">
+                    Preferred Transport Mode
+                  </label>
+                  <div class="console-mode-selector" id="calc-mode-selector" style="margin-bottom: 0;">
+                    <button type="button" class="console-mode-btn active" data-calc-mode="multimodal">
+                      <svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                      <span>Swarm</span>
+                    </button>
+                    <button type="button" class="console-mode-btn" data-calc-mode="airpod">
+                      <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                      <span>AirPod</span>
+                    </button>
+                    <button type="button" class="console-mode-btn" data-calc-mode="maglev">
+                      <svg class="icon icon-xs" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16M12 3v8M8 19l-3 3M16 19l3 3M9 15h.01M15 15h.01"/></svg>
+                      <span>Maglev</span>
+                    </button>
+                    <button type="button" class="console-mode-btn" data-calc-mode="shuttle">
+                      <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M8 6v6M16 6v6M2 12h20M6 18h12M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm2 12v2m12-2v2"/></svg>
+                      <span>Shuttle</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: var(--space-3); align-items: center; background: var(--color-surface-translucent); padding: 12px 16px; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle);">
+                  <input type="checkbox" id="calc-stepfree-check" style="width: 18px; height: 18px; accent-color: var(--color-accent-cyan); cursor: pointer;">
+                  <label for="calc-stepfree-check" style="font-size: var(--font-size-xs); cursor: pointer; color: var(--color-text-primary); font-weight: 600;">
+                    Prioritize 100% Step-Free & Pneumatic Level-Boarding Ramps
+                  </label>
+                </div>
+              </div>
+
+              <!-- Right Results Card -->
+              <div class="calc-result-box">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge badge-live" style="background: rgba(16, 185, 129, 0.2); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.4);">
+                      ● INSTANT ESTIMATE
+                    </span>
+                    <span id="calc-distance-text" style="font-size: 12px; color: #A0B4BD; font-weight: 700;">116 km Inter-City</span>
+                  </div>
+
+                  <div style="margin-top: var(--space-4);">
+                    <div style="font-size: 11px; color: #A0B4BD; text-transform: uppercase; font-weight: 700;">2100 Autonomous Travel Time</div>
+                    <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 2px;">
+                      <span id="calc-time-2100" style="font-size: 2.2rem; font-weight: 900; color: #FFFFFF; font-family: var(--font-heading);">14 mins</span>
+                      <span id="calc-speed-text" style="font-size: 12px; color: var(--color-accent-cyan); font-weight: 700;">(Avg 490 km/h)</span>
+                    </div>
+                    <div id="calc-comparison-text" style="font-size: 12px; color: #7EF2C5; margin-top: 4px; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+                      <svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                      <span>2 hrs 31 mins faster than 2026 road transit (91% time saved)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4 Metrics Grid -->
+                <div class="calc-stats-grid">
+                  <div class="calc-stat-card">
+                    <div class="calc-stat-val" id="calc-co2-saved">18.4 kg</div>
+                    <div class="calc-stat-label">Net CO₂ Offset</div>
+                  </div>
+                  <div class="calc-stat-card">
+                    <div class="calc-stat-val" id="calc-fare-val">42.50 Q</div>
+                    <div class="calc-stat-label">Estimated Fare</div>
+                  </div>
+                  <div class="calc-stat-card">
+                    <div class="calc-stat-val" id="calc-transfers-val">0 Transfers</div>
+                    <div class="calc-stat-label">Platform Waiting</div>
+                  </div>
+                  <div class="calc-stat-card">
+                    <div class="calc-stat-val" id="calc-credits-val" style="color: #7EF2C5;">+125 Pts</div>
+                    <div class="calc-stat-label">Eco-Karma Earned</div>
+                  </div>
+                </div>
+
+                <!-- Instant Dispatch Button -->
+                <button type="button" class="btn btn-glow" id="calc-dispatch-btn" style="width: 100%; justify-content: center; padding: 14px; font-weight: 800;">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  <span>Instant Dispatch Calculated Route</span>
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. How It Works (Frictionless Travel in 3 Steps) -->
+        <section class="features-section">
+          <div class="section-header-center">
+            <span class="badge badge-fastest">HOW ORBIT 2100 WORKS</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">One Journey. Three Simple Steps.</h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+              Say goodbye to juggling 4 different transit apps. ORBIT unifies every transfer into one synchronized stream.
+            </p>
+          </div>
+
+          <div class="how-it-works-grid">
+            <div class="how-step-card">
+              <div class="how-step-badge">1</div>
+              <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-2);">Pick Destination & Preferences</h3>
+              <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.5;">
+                Select where you want to go. Enable step-free wheelchair access or audio escort in one click.
+              </p>
+            </div>
+
+            <div class="how-step-card">
+              <div class="how-step-badge">2</div>
+              <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-2);">Quantum Swarm Pre-Reservation</h3>
+              <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.5;">
+                Choose your vehicle (AirPod, Maglev, or Shuttle). Your platform gate and connecting transfers are synchronized instantly.
+              </p>
+            </div>
+
+            <div class="how-step-card">
+              <div class="how-step-badge">3</div>
+              <h3 style="font-size: var(--font-size-md); margin-bottom: var(--space-2);">Follow the Glowing Cyan Path</h3>
+              <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); line-height: 1.5;">
+                Step onto the floor light guide at the terminal directly into your reserved carriage with zero stairs or friction.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3B. Autonomous Safety & Rapid Escort Protocols Hub -->
+        <section class="safety-protocol-section">
+          <div class="section-header-center">
+            <span class="badge badge-balanced">CIVIL RESILIENCE & PASSENGER CARE</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">Autonomous Safety & Escort Protocols</h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+              Multi-redundant quantum protocols guaranteeing passenger security, physiological comfort, and universal accessibility.
+            </p>
+          </div>
+
+          <div class="safety-protocol-grid">
+            <!-- Protocol 1 -->
+            <div class="safety-protocol-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="badge badge-live">75-SEC ESCORT</span>
+                <svg class="icon icon-md" style="color: var(--color-accent-cyan);" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-md); margin-top: 4px;">Rapid Response Pods (#ESC-01)</h3>
+              <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); line-height: 1.6;">
+                Dedicated medical and safety drone pods stationed across 42 skyway nodes capable of intercepting any transit vehicle within 75 seconds.
+              </p>
+              <button type="button" class="btn btn-secondary" id="test-escort-dispatch-btn" style="width: 100%; padding: 8px; font-size: 11px; margin-top: auto;">
+                <span>Simulate Emergency Pod Ping</span>
+              </button>
+            </div>
+
+            <!-- Protocol 2 -->
+            <div class="safety-protocol-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="badge badge-fastest">NEURAL VITALS</span>
+                <svg class="icon icon-md" style="color: #7EF2C5;" viewBox="0 0 24 24"><path d="M2 15c6.667-6 13.333 0 20-6M9 22c1.798-1.998 2.518-3.995 2.807-5.993M15 2c-1.798 1.998-2.518 3.995-2.807 5.993m4.808 6.007c-.452 1.354-1.077 2.684-1.874 3.993M7.127 8.007C7.579 6.653 8.204 5.323 9.001 4.014M2 9c6.667 6 13.333 0 20 6"/></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-md); margin-top: 4px;">Non-Invasive Biometric Monitoring</h3>
+              <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); line-height: 1.6;">
+                Cabin seat sensors unobtrusively detect passenger stress, motion sickness, or hypoxia, auto-adjusting O₂ levels, G-force dampers, and atmospheric pressure.
+              </p>
+              <div style="background: var(--color-surface-translucent); padding: 8px 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-top: auto; font-size: 11px; color: #10B981; font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <span>● Active Sensor Mesh: 100% Nominal</span>
+              </div>
+            </div>
+
+            <!-- Protocol 3 -->
+            <div class="safety-protocol-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="badge badge-eco">100% INCLUSIVE</span>
+                <svg class="icon icon-md" style="color: #10B981;" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M18 19a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/><path d="m9 9 3 5 4-1M9 9h5v5"/></svg>
+              </div>
+              <h3 style="font-size: var(--font-size-md); margin-top: 4px;">Step-Free Level Boarding Guarantee</h3>
+              <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); line-height: 1.6;">
+                Automated micro-pneumatic platform levelers match vehicle door sills down to the millimeter, ensuring frictionless access for wheelchairs and strollers.
+              </p>
+              <div style="background: var(--color-surface-translucent); padding: 8px 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); margin-top: auto; font-size: 11px; color: var(--color-accent-cyan); font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                <span>● Zero-Step Laser Alignment Enabled</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3C. 2100 Citizen Subscription Plans Matrix & Interactive Checkout -->
+        <section class="commuter-pass-section" style="margin: var(--space-12) 0;">
+          <div class="section-header-center">
+            <span class="badge badge-balanced">CITIZEN MEMBERSHIP TIERS</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">2100 Mobility Passes & Subscriptions</h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+              All-inclusive quantum passes for seamless daily commuting, multi-modal transfers, and biometric automated boarding.
+            </p>
+
+            <!-- Monthly / Annual Billing Toggle -->
+            <div class="plan-toggle-wrapper">
+              <div class="plan-billing-pill">
+                <button type="button" class="plan-billing-btn active" data-billing-cycle="monthly">
+                  Monthly Billing
+                </button>
+                <button type="button" class="plan-billing-btn" data-billing-cycle="annual">
+                  Annual Pass
+                </button>
+              </div>
+              <span class="plan-discount-badge">Save 20% + 500 Bonus Karma</span>
+            </div>
+          </div>
+
+          <!-- 4 Plans Matrix -->
+          <div class="plans-grid-futuristic">
+            <!-- Plan 1: Quantum Commuter -->
+            <div class="plan-card-futuristic">
+              <div>
+                <span class="badge badge-balanced" style="font-size: 10px;">METRO & PODS</span>
+                <h3 style="font-size: var(--font-size-lg); margin-top: 8px;">Quantum Commuter</h3>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 2px;">Essential daily urban transport.</p>
+                
+                <div class="plan-price-large">
+                  <span class="plan-price-val" data-monthly="49" data-annual="39">49</span>
+                  <span style="font-size: 13px; color: var(--color-text-secondary); font-weight: 600;">Q / mo</span>
+                </div>
+                
+                <ul class="plan-features-list">
+                  <li><span class="check-icon">✓</span> Unlimited Smart Road Pods</li>
+                  <li><span class="check-icon">✓</span> 10 Island Maglev Rides / mo</li>
+                  <li><span class="check-icon">✓</span> Biometric Station Tap-to-Board</li>
+                  <li><span class="check-icon">✓</span> Standard 75s Emergency Escort</li>
+                </ul>
+              </div>
+
+              <button type="button" class="btn btn-secondary plan-select-btn"
+                data-plan-id="commuter"
+                data-plan-name="Quantum Commuter"
+                data-plan-icon="bus"
+                data-monthly="49"
+                data-annual="39"
+                data-perks="Unlimited Smart Road Pods, 10 Maglev Rides/mo, Biometric Gate Tap, Standard 75s Escort"
+                style="width: 100%; padding: 10px; font-weight: 700;">
+                <span>Select Commuter Pass</span>
+              </button>
+            </div>
+
+            <!-- Plan 2: Quantum Explorer -->
+            <div class="plan-card-futuristic">
+              <div>
+                <span class="badge badge-fastest" style="font-size: 10px;">HIGH SPEED SPINE</span>
+                <h3 style="font-size: var(--font-size-lg); margin-top: 8px;">Quantum Explorer</h3>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 2px;">Inter-city travelers & professionals.</p>
+                
+                <div class="plan-price-large" style="color: var(--color-accent-cyan);">
+                  <span class="plan-price-val" data-monthly="79" data-annual="63">79</span>
+                  <span style="font-size: 13px; color: var(--color-text-secondary); font-weight: 600;">Q / mo</span>
+                </div>
+                
+                <ul class="plan-features-list">
+                  <li><span class="check-icon">✓</span> Unlimited Island-Wide Maglev Spine</li>
+                  <li><span class="check-icon">✓</span> 15 Monthly AirPod Direct Corridors</li>
+                  <li><span class="check-icon">✓</span> Priority Swarm Gate Routing</li>
+                  <li><span class="check-icon">✓</span> +50 Eco-Karma Monthly Bonus</li>
+                </ul>
+              </div>
+
+              <button type="button" class="btn btn-secondary plan-select-btn"
+                data-plan-id="explorer"
+                data-plan-name="Quantum Explorer"
+                data-plan-icon="train"
+                data-monthly="79"
+                data-annual="63"
+                data-perks="Unlimited Maglev Spine, 15 AirPod Corridors/mo, Priority Swarm Gate, +50 Monthly Karma"
+                style="width: 100%; padding: 10px; font-weight: 700;">
+                <span>Select Explorer Pass</span>
+              </button>
+            </div>
+
+            <!-- Plan 3: Eco-Pioneer Infinite (Featured) -->
+            <div class="plan-card-futuristic featured">
+              <div class="plan-badge-top">
+                <span class="badge badge-eco" style="font-size: 10px;">RECOMMENDED</span>
+              </div>
+              <div>
+                <span class="badge badge-eco" style="font-size: 10px;">NET ZERO CITIZEN</span>
+                <h3 style="font-size: var(--font-size-lg); margin-top: 8px;">Eco-Pioneer Infinite</h3>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 2px;">Unlimited island-wide freedom.</p>
+                
+                <div class="plan-price-large" style="color: #10B981;">
+                  <span class="plan-price-val" data-monthly="119" data-annual="95">119</span>
+                  <span style="font-size: 13px; color: var(--color-text-secondary); font-weight: 600;">Q / mo</span>
+                </div>
+                
+                <ul class="plan-features-list">
+                  <li><span class="check-icon">✓</span> Unlimited AirPod, Maglev & Shuttles</li>
+                  <li><span class="check-icon">✓</span> 2x Eco-Karma Carbon Multiplier</li>
+                  <li><span class="check-icon">✓</span> Free Neural Audio & Spatial Glass Tint</li>
+                  <li><span class="check-icon">✓</span> Guaranteed 45s Rapid Escort Escrow</li>
+                </ul>
+              </div>
+
+              <button type="button" class="btn btn-glow plan-select-btn"
+                data-plan-id="eco-pioneer"
+                data-plan-name="Eco-Pioneer Infinite"
+                data-plan-icon="eco"
+                data-monthly="119"
+                data-annual="95"
+                data-perks="Unlimited Multi-Modal Access, 2x Karma Multiplier, Spatial Tint & Neural Audio, 45s Rapid Escort"
+                style="width: 100%; padding: 12px; font-weight: 800;">
+                <span>✦ Subscribe to Eco-Pioneer</span>
+              </button>
+            </div>
+
+            <!-- Plan 4: Universal Freedom Pass -->
+            <div class="plan-card-futuristic">
+              <div>
+                <span class="badge badge-balanced" style="font-size: 10px;">100% INCLUSIVE</span>
+                <h3 style="font-size: var(--font-size-lg); margin-top: 8px;">Universal Freedom</h3>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 2px;">Seniors, Students & Adaptive Mobility.</p>
+                
+                <div class="plan-price-large" style="color: #7EF2C5;">
+                  <span class="plan-price-val" data-monthly="0" data-annual="0">0</span>
+                  <span style="font-size: 13px; color: var(--color-text-secondary); font-weight: 600;">Q (Free)</span>
+                </div>
+                
+                <ul class="plan-features-list">
+                  <li><span class="check-icon">✓</span> 100% State-Subsidized Island Travel</li>
+                  <li><span class="check-icon">✓</span> Priority Level-Boarding Ramp Sync</li>
+                  <li><span class="check-icon">✓</span> Dedicated Station Assistant Drone</li>
+                  <li><span class="check-icon">✓</span> Voice & Tactile Wayfinding Escort</li>
+                </ul>
+              </div>
+
+              <button type="button" class="btn btn-secondary plan-select-btn"
+                data-plan-id="universal"
+                data-plan-name="Universal Freedom Pass"
+                data-plan-icon="wheelchair"
+                data-monthly="0"
+                data-annual="0"
+                data-perks="100% Free Island Travel, Priority Level Boarding, Personal Assistant Drone, Tactile Escort"
+                style="width: 100%; padding: 10px; font-weight: 700;">
+                <span>Claim Universal Pass</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3D. 2100 Citizen Testimonials & Hologram Reviews -->
+        <section class="citizen-reviews-section">
+          <div class="section-header-center">
+            <span class="badge badge-fastest">VERIFIED CITIZEN TELEMETRY</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">Loved by 2100 Commuters</h2>
+            <p style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: 6px;">
+              Real feedback from travelers navigating Sri Lanka's synchronized quantum mobility network.
+            </p>
+          </div>
+
+          <div class="citizen-reviews-grid">
+            <!-- Review 1 -->
+            <div class="citizen-review-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span style="color: #F59E0B; font-size: 14px;">★★★★★</span>
+                  <span class="badge badge-eco" style="font-size: 9px;">VERIFIED CITIZEN #8941</span>
+                </div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); line-height: 1.6; font-style: italic;">
+                  "Commuting from Galle Marine Gateway to Colombo Central in 11 minutes via Maglev with zero platform wait time feels like living in pure magic. The continuous transfer sync is flawless."
+                </p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #38D9FF, #10B981); display: flex; align-items: center; justify-content: center; color: #020817;">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+                </div>
+                <div>
+                  <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Dr. Ananya Perera</div>
+                  <div style="font-size: 10px; color: var(--color-text-muted);">Marine Biologist • Oceanic Arcology</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="citizen-review-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span style="color: #F59E0B; font-size: 14px;">★★★★★</span>
+                  <span class="badge badge-fastest" style="font-size: 9px;">VERIFIED CITIZEN #4102</span>
+                </div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); line-height: 1.6; font-style: italic;">
+                  "The AirPod eVTOL sky corridors from Kandy to Colombo save me over 3 hours every day. The automated glass tinting and silent acoustic cabin let me work effortlessly in mid-air."
+                </p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #A855F7, #38D9FF); display: flex; align-items: center; justify-content: center; color: #FFFFFF;">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </div>
+                <div>
+                  <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Kaelen Silva</div>
+                  <div style="font-size: 10px; color: var(--color-text-muted);">Orbital Flight Engineer • Lunar Terminal</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="citizen-review-card">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span style="color: #F59E0B; font-size: 14px;">★★★★★</span>
+                  <span class="badge badge-balanced" style="font-size: 9px;">VERIFIED CITIZEN #6290</span>
+                </div>
+                <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); line-height: 1.6; font-style: italic;">
+                  "As a wheelchair user, the 100% step-free laser alignment ramps and smart floor light paths give me complete independent freedom. Truly the most accessible transit system ever designed."
+                </p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border-subtle); padding-top: 10px;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #10B981, #7EF2C5); display: flex; align-items: center; justify-content: center; color: #020817;">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-1.76-3.5"/></svg>
+                </div>
+                <div>
+                  <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Maya Wickremesinghe</div>
+                  <div style="font-size: 10px; color: var(--color-text-muted);">Inclusive Urban Planner • Central Highlands</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. 2100 Frequently Asked Questions (Accordion) -->
+        <section class="faq-section">
+          <div class="section-header-center">
+            <span class="badge badge-balanced">FREQUENTLY ASKED QUESTIONS</span>
+            <h2 style="font-size: var(--font-size-2xl); margin-top: 6px;">Understanding 2100 Mobility</h2>
+          </div>
+
+          <div class="faq-list" id="faq-accordion-list">
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How does ORBIT synchronize multiple transport modes into one journey?</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                ORBIT connects to Sri Lanka's island-wide Quantum Mesh. When you request a journey, the AI coordinates arrival times across autonomous buses, maglev trains, and air taxis so your connecting vehicle is already waiting the moment you step off.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>How does the Cyan Path indoor navigation work?</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                Station concourses are embedded with dynamic smart LED tiles that illuminate a soft cyan pathway specifically for you, guiding you directly to your reserved boarding gate with zero confusion or map reading.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>Are all routes accessible for wheelchair and reduced-mobility travelers?</span>
+                <svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                Yes! Every autonomous vehicle and station platform in 2100 is engineered with pneumatic level-boarding ramps, elevator direct links, and step-free design.
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: LIVE TRACKING (UBER / PICKME STYLE REAL-TIME HUD)
+         ==================================================================== -->
+    <section class="view-section" data-view-id="live" id="section-live">
+      <div class="app-container" style="padding-top: var(--space-4);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4); flex-wrap: wrap; gap: var(--space-2);">
+          <div>
+            <span class="badge badge-live">● REAL-TIME GPS & SWARM HUD</span>
+            <h1 style="font-size: var(--font-size-xl); margin-top: 2px;">Live 2100 Ride Tracking</h1>
+          </div>
+          <div style="display: flex; gap: var(--space-2);">
+            <button class="btn btn-secondary" id="live-switch-demo-btn" style="padding: 6px 14px; font-size: 12px;">
+              🔄 Switch Demo Vehicle
+            </button>
+            <button class="btn btn-primary" id="live-new-plan-btn" style="padding: 6px 14px; font-size: 12px;">
+              ✦ Plan New Ride
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Content Container (Populated by liveJourney.js) -->
+        <div id="live-journey-content"></div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 3: INTERACTIVE MOBILITY MAP
+         ==================================================================== -->
+    <section class="view-section" data-view-id="map" id="section-map">
+      <div class="app-container" style="padding-top: var(--space-4);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4);">
+          <div>
+            <span class="badge badge-fastest">2100 TRANSIT MESH • SRI LANKA</span>
+            <h1 style="font-size: var(--font-size-xl); margin-top: 2px;">Autonomous Mobility Grid</h1>
+            <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 2px;">
+              Click any station node for live arrival boards and instant route generation.
+            </p>
+          </div>
+          <div>
+            <button class="btn btn-primary" data-open-planner-btn style="padding: 6px 14px; font-size: 12px;">
+              ✦ Start Journey from Map
+            </button>
+          </div>
+        </div>
+
+        <div id="mobility-map-container"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       FULL-SCREEN JOURNEY PLANNING STUDIO & 4-STEP WORKFLOW
+       ==================================================================== -->
+  <div id="journey-wizard-modal" class="wizard-fullscreen-studio" aria-hidden="true" role="dialog" aria-modal="true">
+    <!-- Studio Top Navigation Header -->
+    <!-- Full Navigation & Stepper Header in Studio Modal -->
+    <header class="studio-top-bar">
+      <div class="studio-top-left">
+        <button type="button" class="studio-back-btn" data-close-wizard id="studio-exit-btn">
+          <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+          <span>Exit Studio</span>
+        </button>
+        <div class="studio-brand-title">
+          <svg class="brand-orbit-icon" style="width: 22px; height: 22px;" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2.5" opacity="0.25"/>
+            <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#38D9FF" stroke-width="2" transform="rotate(-25 16 16)"/>
+            <circle cx="26" cy="11" r="3" fill="#7EF2C5"/>
+            <circle cx="16" cy="16" r="5" fill="currentColor"/>
+          </svg>
+          <span>ORBIT <span style="color: var(--color-accent-cyan);">2100</span></span>
+        </div>
+      </div>
+
+      <!-- 3-Step Stepper in Studio Header -->
+      <div class="studio-stepper">
+        <div class="studio-step-item active" data-step-target="1" id="studio-nav-step-1">
+          <div class="studio-step-num">1</div>
+          <span>Route & Fleet</span>
+        </div>
+        <div class="studio-step-sep"></div>
+        <div class="studio-step-item" data-step-target="2" id="studio-nav-step-2">
+          <div class="studio-step-num">2</div>
+          <span>Journey Summary</span>
+        </div>
+        <div class="studio-step-sep"></div>
+        <div class="studio-step-item" data-step-target="3" id="studio-nav-step-3">
+          <div class="studio-step-num">3</div>
+          <span>Payment & Auth</span>
+        </div>
+      </div>
+
+      <!-- Studio Quick App Nav & Close Action -->
+      <div class="studio-top-right">
+        <div class="studio-quick-nav-links">
+          <button type="button" class="studio-nav-tab active" data-studio-nav="home">
+            <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+            <span>Ride & Plan</span>
+          </button>
+          <button type="button" class="studio-nav-tab" data-studio-nav="live">
+            <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+            <span>Live Tracking</span>
+          </button>
+          <button type="button" class="studio-nav-tab" data-studio-nav="map">
+            <svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+            <span>Mobility Map</span>
+          </button>
+        </div>
+
+        <button class="studio-close-btn" data-close-wizard aria-label="Close Studio">✕</button>
+      </div>
+    </header>
+
+    <!-- Studio Main Scrollable Body Container -->
+    <main class="studio-main-body">
+
+      <!-- ================================================================
+           STEP 1: LOCATION INPUTS + ADD STOPS + LIVE ROUTE MAP + FLEET
+           ================================================================ -->
+      <div class="studio-step-view active" id="wizard-step-1">
+        <div class="studio-view-header">
+          <span class="badge badge-live">● STEP 1 OF 3 • MULTI-MODAL ROUTING</span>
+          <h1 class="studio-view-title">Plan 2100 Autonomous Journey</h1>
+          <p class="studio-view-desc">
+            Select origin, add intermediate waypoints, explore live available routes on the dynamic vector map, and choose your preferred 2100 vehicle corridor.
+          </p>
+        </div>
+
+        <div class="studio-step1-grid">
+          <!-- Left Column: Locations, Dynamic Stops & Switch -->
+          <div class="studio-location-cluster">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 11px; font-weight: 800; color: var(--color-accent-cyan); text-transform: uppercase; letter-spacing: 0.05em;">
+                Route Waypoints
+              </span>
+              <button type="button" class="btn-add-stop-trigger" id="wizard-add-stop-btn">
+                <span>+ Add Intermediate Stop</span>
+              </button>
+            </div>
+
+            <!-- Route Inputs Container -->
+            <div class="studio-route-input-group">
+              <!-- Pickup Location (From) -->
+              <div class="studio-stop-card">
+                <div class="route-node-icon">
+                  <span class="label-indicator start-dot"></span>
+                </div>
+                <div class="route-field-content">
+                  <div class="route-field-label">Pickup Location (Start Node)</div>
+                  <input type="text" id="wizard-from-input" class="route-field-input" value="Colombo Central Grand Hub" placeholder="Enter pickup station" required>
+                  <div id="wizard-from-autocomplete" class="autocomplete-dropdown"></div>
+                </div>
+              </div>
+
+              <!-- Dynamic Intermediate Stops Container -->
+              <div id="wizard-dynamic-stops-container" style="display: flex; flex-direction: column; gap: var(--space-3);"></div>
+
+              <!-- Swap Button Row -->
+              <div style="display: flex; justify-content: flex-end; margin: -6px var(--space-3) -6px 0; z-index: 3; position: relative;">
+                <button type="button" class="studio-swap-btn" id="wizard-swap-locations-btn" title="Switch pickup & destination" aria-label="Switch pickup & destination">
+                  <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="m16 3 4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg>
+                </button>
+              </div>
+
+              <!-- Destination Location (To) -->
+              <div class="studio-stop-card">
+                <div class="route-node-icon">
+                  <span class="label-indicator end-dot"></span>
+                </div>
+                <div class="route-field-content">
+                  <div class="route-field-label">Destination (Drop Location)</div>
+                  <input type="text" id="wizard-to-input" class="route-field-input" value="Oceanic District Floating Plaza" placeholder="Where to in 2100?" required>
+                  <div id="wizard-to-autocomplete" class="autocomplete-dropdown"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Hub Presets -->
+            <div>
+              <div style="font-size: 10px; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 6px;">
+                Popular 2100 Destinations:
+              </div>
+              <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                <button type="button" class="console-preset-chip active wizard-preset-btn" data-preset-to="Oceanic District Floating Plaza">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+                  <span>Oceanic Plaza</span>
+                </button>
+                <button type="button" class="console-preset-chip wizard-preset-btn" data-preset-to="University Eco-Arcology">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span>University Arcology</span>
+                </button>
+                <button type="button" class="console-preset-chip wizard-preset-btn" data-preset-to="Sky Gardens Bio-Tower">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M12 10a4 4 0 0 0-4 4c0 2 2 3 4 3s4-1 4-3a4 4 0 0 0-4-4zM12 2a6 6 0 0 0-6 6c0 3 2.5 5.5 6 5.5s6-2.5 6-5.5a6 6 0 0 0-6-6zM12 17v5"/></svg>
+                  <span>Sky Gardens</span>
+                </button>
+                <button type="button" class="console-preset-chip wizard-preset-btn" data-preset-to="Lunar Gateway Orbital Terminal">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09zM12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6.05 11a22.35 22.35 0 0 1-3.95 2z"/></svg>
+                  <span>Lunar Gateway</span>
+                </button>
+                <button type="button" class="console-preset-chip wizard-preset-btn" data-preset-to="Kandy SkyHub">
+                  <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                  <span>Kandy SkyHub</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Accessibility & Adaptive Switches -->
+            <div style="background: var(--color-bg-secondary); border-radius: var(--radius-lg); padding: var(--space-4); border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; font-weight: 800; color: var(--color-accent-mint); text-transform: uppercase; margin-bottom: 8px;">
+                Adaptive Accessibility Matrix
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: var(--font-size-xs); font-weight: 600; cursor: pointer;">
+                  <span style="display: flex; align-items: center; gap: 6px;">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M18 19a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/><path d="m9 9 3 5 4-1M9 9h5v5"/></svg>
+                    <span>100% Step-Free Level Boarding & Pneumatic Ramps</span>
+                  </span>
+                  <input type="checkbox" id="wizard-opt-stepfree" checked style="width: 18px; height: 18px;">
+                </label>
+                <label style="display: flex; align-items: center; justify-content: space-between; font-size: var(--font-size-xs); font-weight: 600; cursor: pointer;">
+                  <span style="display: flex; align-items: center; gap: 6px;">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/></svg>
+                    <span>Dynamic Illuminated Cyan Floor Pathway Guide</span>
+                  </span>
+                  <input type="checkbox" id="wizard-opt-cyanpath" checked style="width: 18px; height: 18px;">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Available Routes Vector Map & Available Vehicles -->
+          <div>
+            <!-- Live Available Routes Vector Map Preview Card -->
+            <div class="studio-map-card">
+              <div class="studio-map-top-hud">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+                  <span style="font-size: 11px; font-weight: 800; color: #FFFFFF;" id="studio-map-status-text">
+                    LIVE CORRIDOR ROUTING • SPEED: 450 km/h
+                  </span>
+                </div>
+                <span class="badge badge-fastest" style="font-size: 10px;" id="studio-map-corridor-badge">
+                  Sky Corridor 140m AGL
+                </span>
+              </div>
+
+              <!-- Interactive Dynamic Vector Route Map Canvas -->
+              <div class="studio-map-canvas-container" id="studio-vector-map-wrap">
+                <svg class="studio-route-svg" id="studio-live-route-svg" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Dynamic SVG route elements injected by planner.js -->
+                </svg>
+              </div>
+            </div>
+
+            <!-- Available Vehicle Routes Selector -->
+            <div style="margin-top: var(--space-4);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                <div style="font-size: 11px; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase;">
+                  Available Vehicle Swarms & Propulsion Modes
+                </div>
+                <span style="font-size: 11px; color: var(--color-accent-cyan); font-weight: 700;">
+                  4 Swarms Active
+                </span>
+              </div>
+
+              <div class="studio-vehicle-list">
+                <!-- Vehicle 1: AirPod eVTOL (Selected by default) -->
+                <div class="studio-vehicle-card selected wizard-vehicle-option" data-vclass="airpod" data-vfare="4.2 ORB" data-vname="ORBIT AirPod Priority eVTOL" data-vspeed="450 km/h" data-vtime="11 min" data-vgate="SkyPort Gate 03 (Level 0 • Step-Free)" data-valti="140m AGL" data-vcolor="#38D9FF">
+                  <img src="assets/images/airpod_taxi.jpg" alt="AirPod Taxi" class="studio-vehicle-img">
+                  <div class="studio-vehicle-info">
+                    <div class="studio-vehicle-title">ORBIT AirPod Priority eVTOL</div>
+                    <div class="studio-vehicle-meta">Sky Corridor • 450 km/h • 11 min trip</div>
+                    <div class="studio-vehicle-desc">Point-to-point flight • Panoramic 360° glass canopy</div>
+                  </div>
+                  <div class="studio-vehicle-price-col">
+                    <div class="studio-vehicle-fare">4.2 ORB</div>
+                    <span class="badge badge-fastest" style="font-size: 10px; margin-top: 4px;">Fastest</span>
+                  </div>
+                </div>
+
+                <!-- Vehicle 2: SkyRail Maglev -->
+                <div class="studio-vehicle-card wizard-vehicle-option" data-vclass="skyrail" data-vfare="2.8 ORB" data-vname="ORBIT SkyRail Maglev High-Spine" data-vspeed="650 km/h" data-vtime="18 min" data-vgate="Maglev Track Platform 2" data-valti="18m Elevated" data-vcolor="#7EF2C5">
+                  <img src="assets/images/autonomous_rail.jpg" alt="SkyRail Maglev" class="studio-vehicle-img">
+                  <div class="studio-vehicle-info">
+                    <div class="studio-vehicle-title">ORBIT SkyRail Maglev High-Spine</div>
+                    <div class="studio-vehicle-meta">Frictionless Spine • 650 km/h • 18 min trip</div>
+                    <div class="studio-vehicle-desc">Superconducting magnetic levitation • Zero bumps</div>
+                  </div>
+                  <div class="studio-vehicle-price-col">
+                    <div class="studio-vehicle-fare">2.8 ORB</div>
+                    <span class="badge badge-balanced" style="font-size: 10px; margin-top: 4px;">Balanced</span>
+                  </div>
+                </div>
+
+                <!-- Vehicle 3: Autonomous Smart Shuttle -->
+                <div class="studio-vehicle-card wizard-vehicle-option" data-vclass="autopod" data-vfare="1.9 ORB" data-vname="ORBIT Autonomous Smart Shuttle" data-vspeed="180 km/h" data-vtime="24 min" data-vgate="Concourse Bay 01 (Road Level)" data-valti="0m Ground Grid" data-vcolor="#10B981">
+                  <img src="assets/images/autonomous_bus.jpg" alt="Autonomous Smart Shuttle" class="studio-vehicle-img">
+                  <div class="studio-vehicle-info">
+                    <div class="studio-vehicle-title">ORBIT Autonomous Smart Shuttle</div>
+                    <div class="studio-vehicle-meta">Inductive Road • 180 km/h • 24 min trip</div>
+                    <div class="studio-vehicle-desc">Zero carbon • Dynamic multi-passenger platoon</div>
+                  </div>
+                  <div class="studio-vehicle-price-col">
+                    <div class="studio-vehicle-fare">1.9 ORB</div>
+                    <span class="badge badge-eco" style="font-size: 10px; margin-top: 4px;">Zero Carbon</span>
+                  </div>
+                </div>
+
+                <!-- Vehicle 4: Sub-Hyperloop Vacuum Tube -->
+                <div class="studio-vehicle-card wizard-vehicle-option" data-vclass="hyperloop" data-vfare="6.5 ORB" data-vname="ORBIT Sub-Hyperloop Vacuum Express" data-vspeed="900 km/h" data-vtime="7 min" data-vgate="Sub-Level -03 HyperGate A" data-valti="-30m Subsurface" data-vcolor="#A9E8FF">
+                  <img src="assets/images/hero_city_2100.jpg" alt="Sub-Hyperloop" class="studio-vehicle-img">
+                  <div class="studio-vehicle-info">
+                    <div class="studio-vehicle-title">ORBIT Sub-Hyperloop Vacuum Express</div>
+                    <div class="studio-vehicle-meta">Sub-Surface Tube • 900 km/h • 7 min trip</div>
+                    <div class="studio-vehicle-desc">Near-vacuum tunnel • Instant island transit</div>
+                  </div>
+                  <div class="studio-vehicle-price-col">
+                    <div class="studio-vehicle-fare">6.5 ORB</div>
+                    <span class="badge badge-fastest" style="font-size: 10px; margin-top: 4px;">Hyper-Speed</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Route Types Filter Bar -->
+              <div style="margin-top: var(--space-4);">
+                <div style="font-size: 10px; font-weight: 800; color: var(--color-text-muted); text-transform: uppercase; margin-bottom: 6px;">
+                  Filter Route Types:
+                </div>
+                <div class="route-types-filter-bar">
+                  <button type="button" class="route-type-chip active" data-route-type="fastest">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <span>Fastest Direct</span>
+                  </button>
+                  <button type="button" class="route-type-chip" data-route-type="eco">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+                    <span>Zero Carbon Eco</span>
+                  </button>
+                  <button type="button" class="route-type-chip" data-route-type="budget">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+                    <span>Budget Pass</span>
+                  </button>
+                  <button type="button" class="route-type-chip" data-route-type="stepfree">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><circle cx="12" cy="4" r="2"/><path d="M18 19a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/><path d="m9 9 3 5 4-1M9 9h5v5"/></svg>
+                    <span>100% Step-Free</span>
+                  </button>
+                  <button type="button" class="route-type-chip" data-route-type="scenic">
+                    <svg class="icon icon-xs" viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+                    <span>Panoramic Skyway</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 1 Bottom Action Row -->
+        <div style="display: flex; justify-content: flex-end; margin-top: var(--space-8);">
+          <button type="button" class="btn btn-primary" id="wizard-goto-step-2" style="padding: 16px 36px; font-weight: 800; font-size: var(--font-size-base); border-radius: var(--radius-xl);">
+            <span>Continue to Journey Summary</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           STEP 2: JOURNEY SUMMARY & CONCOURSE GATE GUIDE
+           ================================================================ -->
+      <div class="studio-step-view" id="wizard-step-2">
+        <div class="studio-view-header">
+          <span class="badge badge-balanced">● STEP 2 OF 3 • ITINERARY BREAKDOWN</span>
+          <h1 class="studio-view-title">Confirm Your 2100 Journey Itinerary</h1>
+          <p class="studio-view-desc">
+            Review your personalized travel stream, reserved boarding gate, dynamic Cyan Path floor lighting guide, and carbon credits.
+          </p>
+        </div>
+
+        <div style="max-width: 760px; margin: 0 auto;">
+          <!-- Summary Itinerary Box -->
+          <div style="background: var(--color-surface); border-radius: var(--radius-2xl); padding: var(--space-6); border: 1px solid var(--border-glass); box-shadow: var(--shadow-xl); margin-bottom: var(--space-6);">
+            
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--space-4);">
+              <div>
+                <span class="badge badge-fastest" style="margin-bottom: 6px;">RESERVED GATE & CARRIAGE</span>
+                <div style="font-size: var(--font-size-lg); font-weight: 800;" id="summary-gate-display">
+                  SkyPort Gate 03 (Level 0 • Step-Free)
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 11px; color: var(--color-text-secondary);">AUTHENTICATION HASH</div>
+                <div style="font-family: var(--font-family-mono); font-size: 13px; font-weight: 800; color: var(--color-accent-cyan);">
+                  #ORB-2100-AUTH-98442
+                </div>
+              </div>
+            </div>
+
+            <!-- Route Nodes Progression -->
+            <div id="summary-route-breakdown" style="padding: var(--space-4) 0; border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); margin-bottom: var(--space-4);">
+              <!-- Rendered dynamically by planner.js -->
+            </div>
+
+            <!-- Vehicle & Mode Summary -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-2);">
+              <div>
+                <div style="font-size: 11px; color: var(--color-text-secondary);">Selected Vehicle & Speed</div>
+                <div style="font-weight: 800; font-size: var(--font-size-base); color: var(--color-text-primary);" id="summary-vehicle-display">
+                  ORBIT AirPod Priority eVTOL (450 km/h)
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 11px; color: var(--color-text-secondary);">Estimated Fare</div>
+                <div style="font-weight: 800; font-size: var(--font-size-xl); color: var(--color-accent-cyan);" id="summary-fare-display">
+                  4.2 ORB
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Cyan Floor Lighting Escort -->
+          <div class="cyan-path-escort" style="margin-bottom: var(--space-5);">
+            <svg class="icon icon-md" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/></svg>
+            <div>
+              <strong>Cyan Path Escort Activated:</strong> The smart LED concourse floor tiles will illuminate a glowing cyan pathway guiding you directly from the hub entrance into your carriage at Gate 03 with zero friction.
+            </div>
+          </div>
+
+          <!-- Eco Offset Metric -->
+          <div class="eco-impact-stat" style="margin-bottom: var(--space-8);">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+            <span>Climate Impact: Saved 3.8 kg CO₂ • Earns +12 ORB Citizen Credits</span>
+          </div>
+
+          <!-- Step 2 Actions -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <button type="button" class="btn btn-secondary" id="wizard-backto-step-1" style="padding: 14px 28px; border-radius: var(--radius-xl);">
+              <span>← Back to Route & Vehicles</span>
+            </button>
+            <button type="button" class="btn btn-primary" id="wizard-goto-step-3" style="padding: 16px 36px; font-weight: 800; font-size: var(--font-size-base); border-radius: var(--radius-xl);">
+              <span>Proceed to Payment & Authorization →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           STEP 3: QUANTUM PAYMENT & SWARM DISPATCH AUTHORIZATION
+           ================================================================ -->
+      <div class="studio-step-view" id="wizard-step-3">
+        <div class="studio-view-header">
+          <span class="badge badge-fastest">● STEP 3 OF 3 • QUANTUM PAYMENT & AUTHORIZATION</span>
+          <h1 class="studio-view-title">Authorize Autonomous Swarm Ride</h1>
+          <p class="studio-view-desc">
+            Select your 2100 quantum payment method. Payment will be deducted from your multi-modal transit account upon gate entry.
+          </p>
+        </div>
+
+        <div style="max-width: 760px; margin: 0 auto;">
+          <!-- Payment Methods Grid -->
+          <div class="payment-methods-grid">
+            <!-- Method 1: Orbit Citizen Quantum Pass -->
+            <div class="payment-method-card selected wizard-pay-option" data-pay-method="pass">
+              <div class="payment-icon-wrap" style="color: var(--color-accent-cyan);">
+                <svg class="icon icon-md" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 800; font-size: var(--font-size-sm);">Orbit Citizen Quantum Pass</div>
+                <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">NFC Auto-Deduct • Balance: 48.5 ORB</div>
+                <span class="badge badge-balanced" style="font-size: 10px; margin-top: 6px;">Recommended</span>
+              </div>
+            </div>
+
+            <!-- Method 2: Federation Credit Key -->
+            <div class="payment-method-card wizard-pay-option" data-pay-method="credit">
+              <div class="payment-icon-wrap" style="color: #7EF2C5;">
+                <svg class="icon icon-md" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 800; font-size: var(--font-size-sm);">Federation Credit Key</div>
+                <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">Multi-Currency Orbital Ledger</div>
+                <span class="badge badge-fastest" style="font-size: 10px; margin-top: 6px;">Instant Clearing</span>
+              </div>
+            </div>
+
+            <!-- Method 3: Decentralized Carbon Token -->
+            <div class="payment-method-card wizard-pay-option" data-pay-method="carbon">
+              <div class="payment-icon-wrap" style="color: #10B981;">
+                <svg class="icon icon-md" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 800; font-size: var(--font-size-sm);">Decentralized Carbon Token</div>
+                <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">100% Eco Rebate • Net Zero Charge</div>
+                <span class="badge badge-eco" style="font-size: 10px; margin-top: 6px;">Zero Net Cost</span>
+              </div>
+            </div>
+
+            <!-- Method 4: Biometric Neural Express Auth -->
+            <div class="payment-method-card wizard-pay-option" data-pay-method="neural">
+              <div class="payment-icon-wrap" style="color: #A9E8FF;">
+                <svg class="icon icon-md" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04ZM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04Z"/></svg>
+              </div>
+              <div>
+                <div style="font-weight: 800; font-size: var(--font-size-sm);">Neural Biometric Auth</div>
+                <div style="font-size: 11px; color: var(--color-text-secondary); margin-top: 2px;">Contactless Retinal / Neural Token</div>
+                <span class="badge badge-fastest" style="font-size: 10px; margin-top: 6px;">Biometric</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Itemized Fare Calculation Card -->
+          <div style="background: var(--color-surface); border-radius: var(--radius-2xl); padding: var(--space-6); border: 1px solid var(--border-glass); box-shadow: var(--shadow-lg); margin-bottom: var(--space-6);">
+            <div style="font-size: var(--font-size-sm); font-weight: 800; margin-bottom: var(--space-3); color: var(--color-text-primary);">
+              Itemized Swarm Dispatch Tariff
+            </div>
+
+            <table class="payment-fare-summary-table">
+              <tbody>
+                <tr>
+                  <td style="color: var(--color-text-secondary);">Base Autonomous Swarm Tariff:</td>
+                  <td style="text-align: right; font-weight: 700;" id="pay-base-fare">3.80 ORB</td>
+                </tr>
+                <tr>
+                  <td style="color: var(--color-text-secondary);">Fusion Cell & Clean Energy Matrix:</td>
+                  <td style="text-align: right; font-weight: 700;">+0.40 ORB</td>
+                </tr>
+                <tr>
+                  <td style="color: #10B981;">Sri Lanka 2100 Citizen Eco Rebate:</td>
+                  <td style="text-align: right; font-weight: 700; color: #10B981;">-0.00 ORB</td>
+                </tr>
+                <tr>
+                  <td>Total Authorized Payment:</td>
+                  <td style="text-align: right; color: var(--color-accent-cyan);" id="pay-total-fare">4.20 ORB</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Authorization Code Display -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: var(--color-bg-secondary); border-radius: var(--radius-lg); padding: var(--space-3) var(--space-4); border: 1px solid var(--border-subtle); margin-bottom: var(--space-8);">
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary); display: flex; align-items: center; gap: 6px;">
+              <svg class="icon icon-xs" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>Cryptographic Swarm Token:</span>
+            </div>
+            <div style="font-family: var(--font-family-mono); font-size: 12px; font-weight: 800; color: var(--color-accent-cyan);">
+              #ORB-DISPATCH-98442-SIG
+            </div>
+          </div>
+
+          <!-- Step 3 Actions -->
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-3);">
+            <button type="button" class="btn btn-secondary" id="wizard-backto-step-2" style="padding: 14px 28px; border-radius: var(--radius-xl);">
+              <span>← Back to Summary</span>
+            </button>
+            <button type="button" class="btn btn-glow" id="wizard-confirm-launch-btn" style="padding: 16px 40px; font-weight: 800; font-size: var(--font-size-md); border-radius: var(--radius-xl);">
+              <svg class="icon icon-sm" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Confirm Payment & Launch Live Tracking</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ====================================================================
+       ACCESSIBILITY MODAL
+       ==================================================================== -->
+  <div id="accessibility-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 style="font-size: var(--font-size-md);">Adaptive Preferences</h3>
+        <button class="modal-close-btn" data-close-a11y-modal aria-label="Close dialog">✕</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-4);">
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+          <div>
+            <div style="font-weight: 700;">Step-Free Route</div>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary);">Prioritize level platform boarding</div>
+          </div>
+          <input type="checkbox" data-a11y-toggle="stepFree" style="width: 20px; height: 20px;">
+        </label>
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+          <div>
+            <div style="font-weight: 700;">High Contrast</div>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary);">High contrast borders</div>
+          </div>
+          <input type="checkbox" data-a11y-toggle="highContrast" style="width: 20px; height: 20px;">
+        </label>
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+          <div>
+            <div style="font-weight: 700;">Large Text</div>
+            <div style="font-size: var(--font-size-xs); color: var(--color-text-secondary);">Increase typography</div>
+          </div>
+          <input type="checkbox" data-a11y-toggle="largeText" style="width: 20px; height: 20px;">
+        </label>
+      </div>
+      <button class="btn btn-primary" style="width: 100%; margin-top: var(--space-6);" data-close-a11y-modal>
+        Done
+      </button>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       2100 CITIZEN SUBSCRIPTION PAYMENT & PASS PROVISIONING MODAL
+       ==================================================================== -->
+  <div id="subscription-payment-modal" class="sub-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-plan-name">
+    <div class="sub-modal-card">
+      
+      <!-- Modal Header -->
+      <div class="sub-modal-header">
+        <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <div id="modal-plan-icon" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(56, 217, 255, 0.15); border: 1px solid rgba(56, 217, 255, 0.4); display: flex; align-items: center; justify-content: center; color: var(--color-accent-cyan);">
+            <svg class="icon icon-md" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+          </div>
+          <div>
+            <div id="modal-plan-name" style="font-size: var(--font-size-md); font-weight: 800; color: var(--color-text-primary);">
+              Eco-Pioneer Infinite
+            </div>
+            <div id="modal-plan-sub" style="font-size: 11px; color: var(--color-text-secondary);">
+              All-Inclusive Net Zero Citizen Pass
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-subtle" id="close-sub-modal-btn" style="padding: 6px; font-size: 18px; color: var(--color-text-secondary); cursor: pointer;" aria-label="Close modal">
+          ✕
+        </button>
+      </div>
+
+      <!-- Modal Body Form View -->
+      <div class="sub-modal-body" id="sub-form-step">
+        
+        <!-- Term Duration Selector -->
+        <div>
+          <label style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 6px; display: block;">
+            Select Subscription Term
+          </label>
+          <div class="sub-term-options">
+            <button type="button" class="sub-term-btn" data-term-months="1">
+              <div style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-primary);">1 Month</div>
+              <div style="font-size: 10px; color: var(--color-text-secondary);">Flexible Renewal</div>
+            </button>
+            <button type="button" class="sub-term-btn" data-term-months="6">
+              <div style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-primary);">6 Months</div>
+              <div style="font-size: 10px; color: #10B981; font-weight: 700;">Save 10%</div>
+            </button>
+            <button type="button" class="sub-term-btn active" data-term-months="12">
+              <div style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-primary);">12 Months (1 Year)</div>
+              <div style="font-size: 10px; color: var(--color-accent-cyan); font-weight: 700;">Save 20% + 500 Pts</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Perks Inclusions Summary -->
+        <div style="background: var(--color-surface-translucent); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: var(--space-4);">
+          <div style="font-size: 11px; font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 6px;">
+            Included Citizen Privileges
+          </div>
+          <div id="modal-perks-text" style="font-size: var(--font-size-xs); color: var(--color-text-primary); line-height: 1.5;">
+            Unlimited Multi-Modal Access • 2x Karma Multiplier • Spatial Tint & Neural Audio • 45s Rapid Escort
+          </div>
+        </div>
+
+        <!-- Payment Method Options -->
+        <div>
+          <label style="font-size: var(--font-size-xs); font-weight: 700; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 6px; display: block;">
+            Select Quantum Payment Option
+          </label>
+          <div class="sub-payment-methods">
+            <div class="sub-pay-card active" data-sub-pay="neural">
+              <svg class="icon icon-md" style="color: #38D9FF;" viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04ZM14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04Z"/></svg>
+              <div>
+                <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Quantum Neural Link</div>
+                <div style="font-size: 10px; color: var(--color-text-secondary);">Direct biometric tap</div>
+              </div>
+            </div>
+
+            <div class="sub-pay-card" data-sub-pay="wallet">
+              <svg class="icon icon-md" style="color: #7EF2C5;" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+              <div>
+                <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Q-Credits Citizen Wallet</div>
+                <div style="font-size: 10px; color: #10B981;">Bal: 1,420.00 Q</div>
+              </div>
+            </div>
+
+            <div class="sub-pay-card" data-sub-pay="solar">
+              <svg class="icon icon-md" style="color: #FFB84D;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+              <div>
+                <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Solar Energy Harvest</div>
+                <div style="font-size: 10px; color: var(--color-text-secondary);">Kinetic grid credits</div>
+              </div>
+            </div>
+
+            <div class="sub-pay-card" data-sub-pay="crypto">
+              <svg class="icon icon-md" style="color: #A9E8FF;" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <div>
+                <div style="font-size: var(--font-size-xs); font-weight: 800; color: var(--color-text-primary);">Universal Quantum Card</div>
+                <div style="font-size: 10px; color: var(--color-text-secondary);">Encrypted ledger</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Receipt Box -->
+        <div class="sub-receipt-box">
+          <div class="sub-receipt-row">
+            <span>Base Subscription Rate:</span>
+            <span id="modal-subtotal">119.00 Q / mo</span>
+          </div>
+          <div class="sub-receipt-row">
+            <span>Billing Term:</span>
+            <span id="modal-term-label">12 Months (Annual)</span>
+          </div>
+          <div class="sub-receipt-row" style="color: #10B981;">
+            <span>Annual Eco-Discount (20% Off):</span>
+            <span id="modal-discount">-285.60 Q</span>
+          </div>
+          <div class="sub-receipt-row" style="color: #7EF2C5;">
+            <span>Bonus Citizen Karma Awarded:</span>
+            <span id="modal-karma">+500 Green Karma Pts</span>
+          </div>
+          <div class="sub-receipt-total">
+            <span>Total Amount Due:</span>
+            <span id="modal-total-due" style="color: var(--color-accent-cyan); font-size: 1.4rem;">1,142.40 Q</span>
+          </div>
+        </div>
+
+        <!-- Confirm Action CTA -->
+        <button type="button" class="btn btn-glow" id="confirm-sub-pay-btn" style="width: 100%; justify-content: center; padding: 14px; font-weight: 800; font-size: var(--font-size-sm);">
+          <span>✦ Authorize & Issue Digital Pass</span>
+          <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <!-- Biometric Scanning HUD (Shown during authorization) -->
+      <div class="sub-scan-hud" id="sub-scan-hud">
+        <div class="bio-pulse-ring">
+          <svg class="icon icon-md" viewBox="0 0 24 24" style="color: var(--color-accent-cyan);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <div class="bio-scan-line"></div>
+        </div>
+        <div>
+          <h3 style="font-size: var(--font-size-lg); color: var(--color-accent-cyan);">Synchronizing Neural Key...</h3>
+          <p style="font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 4px;">
+            Validating citizen biometric signature with Sri Lanka 2100 Quantum Mesh Ledger.
+          </p>
+        </div>
+        <div style="font-size: 11px; color: #10B981; font-weight: 700;">
+          ● Cryptographic Zero-Knowledge Attestation Active
+        </div>
+      </div>
+
+      <!-- Success Holographic Pass Result View -->
+      <div class="sub-modal-body" id="sub-success-step" style="display: none;">
+        <div class="citizen-hologram-pass">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+              <span class="badge badge-live" style="background: rgba(16, 185, 129, 0.25); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.5);">
+                ● ACTIVE 2100 CITIZEN PASS
+              </span>
+              <h2 id="success-pass-title" style="font-size: 1.5rem; color: #FFFFFF; margin-top: 6px; font-family: var(--font-heading);">
+                Eco-Pioneer Infinite
+              </h2>
+            </div>
+            <div id="success-pass-icon" style="color: #10B981; display: flex; align-items: center;">
+              <svg class="icon icon-lg" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/></svg>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: var(--space-4);">
+            <div>
+              <div style="font-size: 10px; color: #A0B4BD; text-transform: uppercase;">Citizen ID Tag</div>
+              <div id="success-citizen-id" style="font-size: var(--font-size-sm); font-weight: 800; color: var(--color-accent-cyan);">
+                #ORBIT-2100-CITIZEN-8842
+              </div>
+              <div style="font-size: 10px; color: #A0B4BD; margin-top: 4px;">Valid Thru: <strong>December 2100</strong></div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 10px; color: #A0B4BD; text-transform: uppercase;">Boarding Protocol</div>
+              <div style="font-size: 11px; font-weight: 700; color: #10B981;">100% Instant Biometric Gate Sync</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-3); margin-top: var(--space-2);">
+          <button type="button" class="btn btn-secondary" id="close-sub-success-btn" style="flex: 1; padding: 12px; font-weight: 700;">
+            Close & Return
+          </button>
+          <button type="button" class="btn btn-glow" id="success-dispatch-ride-btn" style="flex: 1; padding: 12px; font-weight: 800;">
+            <span>✦ Plan First Ride</span>
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       INTERNATIONAL GRAND FOOTER
+       ==================================================================== -->
+  <footer class="grand-footer">
+    <div class="app-container">
+      <div class="footer-main-grid">
+        <!-- Col 1: Brand & Live Status -->
+        <div>
+          <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-3);">
+            <svg class="brand-orbit-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2.5" opacity="0.25"/>
+              <ellipse cx="16" cy="16" rx="14" ry="6" stroke="#38D9FF" stroke-width="2" transform="rotate(-25 16 16)"/>
+              <circle cx="26" cy="11" r="3" fill="#7EF2C5"/>
+              <circle cx="16" cy="16" r="5" fill="currentColor"/>
+            </svg>
+            <span style="font-weight: 800; font-size: 1.4rem; color: #FFFFFF;">
+              ORBIT <span style="color: var(--color-accent-cyan); font-size: 0.75rem; background: rgba(56, 217, 255, 0.15); padding: 2px 6px; border-radius: 4px;">2100</span>
+            </span>
+          </div>
+
+          <p style="font-size: var(--font-size-sm); color: #A0B4BD; line-height: 1.6; margin-bottom: var(--space-4); max-width: 320px;">
+            One continuous journey across every way to move. Unifying autonomous rail, skyways, airpod swarms, and inductive smart roads.
+          </p>
+
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: var(--radius-pill); background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); font-size: 11px; color: #7EF2C5; font-weight: 700;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+            <span>Quantum Mesh Grid: 100% Operational (0.38ms)</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Multimodal Fleet -->
+        <div>
+          <div class="footer-col-title">2100 Mobility Fleet</div>
+          <div class="footer-links-list">
+            <a href="#home" data-nav-target="home">ORBIT AirPod Priority eVTOL</a>
+            <a href="#home" data-nav-target="home">SkyRail High-Spine Maglev</a>
+            <a href="#home" data-nav-target="home">Autonomous Smart Shuttles</a>
+            <a href="#home" data-nav-target="home">Suborbital Lunar Gateway Pods</a>
+            <a href="#home" data-nav-target="home">Bio-Marine Hydrofoil Spine</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Universal Design & Safety -->
+        <div>
+          <div class="footer-col-title">Safety & Inclusion</div>
+          <div class="footer-links-list">
+            <a href="#" data-open-a11y-modal>Adaptive Step-Free Routes</a>
+            <a href="#" data-open-a11y-modal>Voice Guidance Audio Escort</a>
+            <a href="#" data-open-a11y-modal>High Contrast & Large Text</a>
+            <a href="#map" data-nav-target="map">Live 2100 Mobility Grid Map</a>
+            <a href="#" data-open-profile>Quantum NFC Pass & Carbon Ledger</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Quantum Comm & Competition -->
+        <div>
+          <div class="footer-col-title">Cre8x 3.0 • Oracle Challenge</div>
+          <p style="font-size: var(--font-size-xs); color: #A0B4BD; line-height: 1.5; margin-bottom: var(--space-3);">
+            Official concept prototype submission for the Cre8x 3.0 Oracle Transportation 2100 Challenge.
+          </p>
+
+          <form id="footer-comm-form" onsubmit="return false;">
+            <div class="footer-newsletter-wrap">
+              <input type="text" class="footer-sub-input" placeholder="Enter Comm ID (e.g. #ORB-98)" id="comm-id-input">
+              <button type="submit" class="btn btn-primary" id="comm-sub-btn" style="padding: 8px 14px; font-size: 11px;">
+                Link
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <div>
+          © 2100 ORBIT Mobility Operating System. Designed for <strong>Cre8x 3.0 — The Oracle Challenge</strong>.
+        </div>
+        <div style="display: flex; gap: var(--space-4);">
+          <a href="#" data-nav-target="home" style="color: #A0B4BD;">Terms of Transit</a>
+          <a href="#" data-open-a11y-modal style="color: #A0B4BD;">Universal Accessibility</a>
+          <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" style="color: var(--color-accent-cyan); font-weight: 700;">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Navigation (3 Clean Tabs) -->
+  <nav class="bottom-nav" aria-label="Mobile Navigation">
+    <a href="#home" class="bottom-nav-item active" data-nav-target="home">
+      <svg class="icon" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/></svg>
+      <span>Ride</span>
+    </a>
+    <a href="#live" class="bottom-nav-item" data-nav-target="live">
+      <svg class="icon" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/></svg>
+      <span>Live Track</span>
+    </a>
+    <a href="#map" class="bottom-nav-item" data-nav-target="map">
+      <svg class="icon" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" x2="9" y1="3" y2="18"/><line x1="15" x2="15" y1="6" y2="21"/></svg>
+      <span>Map</span>
+    </a>
+  </nav>
+
+  <!-- Global Toast Notifications -->
+  <div id="global-toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/icons.js"></script>
+  <script src="js/backgroundMesh.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/planner.js"></script>
+  <script src="js/liveJourney.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
